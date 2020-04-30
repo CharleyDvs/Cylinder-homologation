@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;400&display=swap');
+h1, h2{
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+}
+p, label, li, a{
+  font-family: 'Open Sans', sans-serif;
+  color: #4d4d4d;
+  font-weight: 400;
+}
 body{
   margin: 0;
   padding: 0;
@@ -5,6 +15,20 @@ body{
 }
 a{
   text-decoration: none;
+}
+button{
+  color: #fff;
+  background-color: #0056b3;
+  margin: 1rem;
+  border: 1px solid #0056b3;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Montserrat, sans-serif;
+}
+button:hover{
+  border: 2px solid #0056b3;
+  box-shadow: 2px 2px 2px #222;
+  cursor: pointer;
 }
 .container{
   display: flex;
