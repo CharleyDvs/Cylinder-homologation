@@ -144,9 +144,20 @@ button:hover{
 .marker{
   width: 1rem;
   height: 1rem;
-  background-color: #070;
   border-radius: 50%;
   box-shadow: 1px 1px 1px #222;
+}
+.blue{
+  background-color: #0056b3;
+}
+.green{
+  background-color: #070;
+}
+.red{
+  background-color: #700;
+}
+.yellow{ 
+  background-color: rgb(227, 240, 49);
 }
 .table label{
   margin-top: .5rem;
