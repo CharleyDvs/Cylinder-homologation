@@ -34,6 +34,9 @@ button:hover{
   box-shadow: 2px 2px 2px #222;
   cursor: pointer;
 }
+select{
+  appearance: none;
+}
 .container{
   display: flex;
   background-color: white;
@@ -145,12 +148,8 @@ button:hover{
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  box-shadow: 1px 1px 1px #222;
   transition-duration: .5s;
   transition-timing-function: ease;
-}
-.blue{
-  background-color: #0056b3;
 }
 .green{
   background-color: #070;
