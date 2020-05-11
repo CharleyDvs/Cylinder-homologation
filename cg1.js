@@ -44,14 +44,14 @@ var stroke = document.getElementById("stroke");
 
 function longStrokeMeasure() {
   if (Number(stroke.value) > 300) {
-    for(i = 0; i < 7; i++) {
-      for(j = 4; j < 7; j++) {
+    for(i = 0; i < boreSizes.length; i++) {
+      for(j = 4; j < boreSizes.length; j++) {
         smcMeasures[i][j] = longStroke[i][j-4];
       }
     }
   } else if (Number(stroke.value) < 300) {
-    for(i = 0; i < 7; i++) {
-      for(j = 4; j < 7; j++) {
+    for(i = 0; i < boreSizes.length; i++) {
+      for(j = 4; j < boreSizes.length; j++) {
         smcMeasures[i][j] = shortStroke[i][j-4];
       }
     }
