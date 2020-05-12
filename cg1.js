@@ -65,6 +65,11 @@ function longStrokeMeasure() {
 
 function autoFill() {
   var bore = document.getElementById("bore").value;
+  if (Number(stroke.value) > 200 && document.getElementById("bore").value === "20"){
+    for(j = 4; j < smcLimit; j++) {
+      smcMeasures[0][j] = longStroke[0][j-4];
+    }
+  }
   for (i = 0; i < boreLimit; i++) {
     if (bore === boreSizes[i]) {
       for (j = 0; j < smcLimit; j++) {
