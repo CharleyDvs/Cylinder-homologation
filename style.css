@@ -213,3 +213,36 @@ select{
   transform: skewX(-35deg);
   border-radius: 2rem;
 }
+.searchContainer{
+  display: flex;
+  flex-flow: column wrap;
+  width: 50%;
+  margin-left: 3em;
+  margin-top: 7em;
+}
+.searchTextBox{
+  margin: 1rem .5rem;
+  width: 10rem;
+  border: 1px solid #0056b3;
+  border-radius: .2rem;
+}
+.hidden{
+  position: relative;
+  top: 7em;
+  opacity: 0;
+  transition-duration: .7s;
+  transition-timing-function: ease-in-out;
+}
+.active{
+  position: relative;
+  top: .2rem;
+  opacity: 1;
+  transition-duration: .8s;
+  transition-timing-function: ease-in-out;
+}
+.resultsContainer{
+  display: flex;
+  flex-flow: column wrap;
+  width: 50%;
+  margin-top: 7em;
+}
