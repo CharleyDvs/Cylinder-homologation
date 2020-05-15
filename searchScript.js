@@ -2,7 +2,7 @@ const cilynderInfo = [
   {
     series:"CG1",
     address: "cg1.html",
-    thread: ["M8x1.25", "M10x1.25", "M14x1.5", "M18x1.5","M22x1.5", "M26x1.5"]
+    thread: ["M8X1.25", "M10X1.25", "M14X1.5", "M18X1.5","M22X1.5", "M26X1.5"]
   }
 ]
 let parameter = document.getElementById("searchType");
@@ -29,24 +29,32 @@ const searchType = () => {
 }
 
 const showResults = (result) => {
-  result.forEach(result => {
-    console.log ("forEach", result);
-      let ul = document.getElementById("results");
+    let ul = document.getElementById("results");
+    if(result.length > 0){
+      result.forEach(result => {
+        console.log ("forEach", result);
+          let li = document.createElement("li");
+          let a = document.createElement("a");
+          let textNode = document.createTextNode(result.series);
+          a.appendChild(textNode);
+          a.href = result.address;
+          li.appendChild(a);
+          li.classList.add("activeResult");
+          ul.appendChild(li);
+    })}
+    else{
       let li = document.createElement("li");
-      let a = document.createElement("a");
-      let textNode = document.createTextNode(result.series);
-      a.appendChild(textNode);
-      a.href = result.address;
-      li.appendChild(a);
+      let textNode = document.createTextNode("La busqueda no produjo resultados, intente con un nuevo parametro");
+      li.appendChild(textNode);
       li.classList.add("activeResult");
       ul.appendChild(li);
-  })
+    }
 }
 
 const searchThread = () => {
   let thread = document.getElementById("threadValue");
   const result = cilynderInfo.filter((cylinderInfo) => {
-    return (cylinderInfo.thread.indexOf(thread.value) >= 0);
+    return (cylinderInfo.thread.indexOf(thread.value.toUpperCase()) >= 0);
   })
   showResults(result);
 }
@@ -63,4 +71,5 @@ const hideResults = () => {
 parameter.addEventListener("change", hide);
 parameter.addEventListener("change", searchType);
 parameter.addEventListener("change", hideResults);
+searchButton.addEventListener("click", hideResults);
 searchButton.addEventListener("click", searchThread);
